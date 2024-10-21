@@ -15,6 +15,7 @@
 
 
 <ng-container *ngFor="let note of notesList">
+    <!-- delete confirmation container -->
     <div class="modal" id="DeletePopup">
         <div class="modalContent">
             <div class="innerContent">
@@ -31,13 +32,15 @@
         </div>
         
         </div>
+
+        <!-- actual notesList -->
     <div class="notesList">
-        
         <div class="note">
+            <div class="del">
+                <img class ="" (click)="deletePopup()" src="assets/images/delete.png">
+            </div>
             <span> {{note}} </span>
-            <!-- TODO: Add hover on delete cross as 'Delete note'.  -->
-            <!-- TOdo: add confirmation screen ' Are you sure?'. DONE -->
-            <span class="del" (click)="deletePopup()">❌</span>
+            <p class="timeStamp">{{today | date:'dd-MM-yyyy ':'+0530'}}</p> 
         </div>
 
     </div>

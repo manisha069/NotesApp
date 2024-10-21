@@ -1,0 +1,49 @@
+<!-- <p>notes works!</p> -->
+
+<div class ="header">
+    <span class ="headerTitle">Notes Maker</span>
+</div>
+
+<div class="filter">
+    <input placeholder="Start typing here..." [(ngModel)]="newNote" class="filterBox">
+
+    <div class="saveNoteButton" (click)="saveNote(newNote)">
+        <span class ="saveNoteLabel">Save Note</span>
+    </div>
+</div>
+
+
+
+<ng-container *ngFor="let note of notesList">
+    <div class="modal" id="DeletePopup">
+        <div class="modalContent">
+            <div class="innerContent">
+                <h4 class="close" (click)="closePopup()">❌</h4>
+    
+                    <h2 class="popupText">Are you sure you want to delete note?</h2>
+                    <div class="yy">
+                        <button class="buttDelete" (click)="deleteNote(note)"> Delete</button>
+                        <button class="buttcancel" (click)="closePopup()">Cancel</button>
+                    </div>
+                           
+            </div>
+          
+        </div>
+        
+        </div>
+    <div class="notesList">
+        
+        <div class="note">
+            <span> {{note}} </span>
+            <!-- TODO: Add hover on delete cross as 'Delete note'.  -->
+            <!-- TOdo: add confirmation screen ' Are you sure?'. DONE -->
+            <span class="del" (click)="deletePopup()">❌</span>
+        </div>
+
+    </div>
+</ng-container>
+
+
+
+
+<!-- TODO: UI fix  -->

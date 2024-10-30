@@ -58,6 +58,14 @@
     display: grid;
 }
 
+.emptyError{
+    font-size: 30px;
+    color:palevioletred;
+    text-align: center;
+    align-items: center;
+    display: grid;
+}
+
 .notesList{
 
     margin-top: 49px;

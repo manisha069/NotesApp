@@ -15,19 +15,37 @@ export class NotesComponent {
   notesList:any =[];
   newNote:any;
   today:any;
+  emptyNote:boolean =false;
 
+  inputFunction(){
+  this.emptyNote = false;
+
+  }
+  
   saveNote(newN:any){
-    this.notesList.push(newN);
-    console.log("noteslist", this.notesList);
-    this.newNote = "";
-    this.today = Date.now();
+  this.emptyNote = false;
+
+    if(newN != "" && newN != null){
+      this.notesList.push(newN);
+      console.log("noteslist", this.notesList);
+      this.newNote = "";
+      this.today = Date.now();
+
+    }
+    else{
+      this.emptyNote = true;
+    }
   }
 
   deleteNote(doc:any){
+    console.log("in delete", doc);
     this.notesList.forEach((item:any, index:any)=>{
       if (item === doc)
         this.notesList.splice(index, 1);
     });
+
+    // let foo_object; // Itemitem(object here) to remove
+// this.foo_objects = this.foo_objects.filter(obj => return obj !== foo_object);
   }
 
   closePopup(){

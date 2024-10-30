@@ -5,13 +5,13 @@
 </div>
 
 <div class="filter">
-    <input placeholder="Start typing here..." [(ngModel)]="newNote" class="filterBox">
+    <input placeholder="Start typing here..." (click)="inputFunction()" [(ngModel)]="newNote" class="filterBox">
 
     <div class="saveNoteButton" (click)="saveNote(newNote)">
         <span class ="saveNoteLabel">Save Note</span>
     </div>
 </div>
-
+<span class="emptyError" style="margin-top: 20px;" *ngIf="emptyNote == true"> Error: no value entered!</span>
 
 
 <ng-container *ngFor="let note of notesList">

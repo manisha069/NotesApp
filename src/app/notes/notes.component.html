@@ -14,7 +14,7 @@
 <span class="emptyError" style="margin-top: 20px;" *ngIf="emptyNote == true"> Error: no value entered!</span>
 
 
-<ng-container *ngFor="let note of notesList">
+<ng-container *ngFor="let note of dataList">
     <!-- delete confirmation container -->
     <div class="modal" id="DeletePopup">
         <div class="modalContent">
@@ -23,7 +23,7 @@
     
                     <h2 class="popupText">Are you sure you want to delete note?</h2>
                     <div class="yy">
-                        <button class="buttDelete" (click)="deleteNote(note)"> Delete</button>
+                        <button class="buttDelete" (click)="deleteNote()"> Delete</button>
                         <button class="buttcancel" (click)="closePopup()">Cancel</button>
                     </div>
                            
@@ -37,9 +37,9 @@
     <div class="notesList">
         <div class="note">
             <div class="del">
-                <img class ="" (click)="deletePopup()" src="assets/images/delete.png">
+                <img class ="" (click)="deletePopup(note[0])" src="assets/images/delete.png">
             </div>
-            <span> {{note}} </span>
+            <span> {{note[1]}} </span>
             <p class="timeStamp">{{today | date:'dd-MM-yyyy ':'+0530'}}</p> 
         </div>
 
